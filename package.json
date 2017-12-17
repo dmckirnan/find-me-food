@@ -1,0 +1,71 @@
+{
+  "name": "find-me-food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run setup",
+    "dev": "webpack-dev-server -d --hot --config webpack.config.js --watch",
+    "setup": "concurrently --kill-others \"npm run build\" \"npm run server\"",
+    "server": "nodemon server/server.js",
+    "build": "webpack -p --watch",
+    "test": "mocha --compilers js:babel-core/register --require ignore-styles",
+    "tdd": "npm test -- --watch",
+    "postinstall": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmckirnan/find-me-food.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmckirnan/find-me-food/issues"
+  },
+  "homepage": "https://github.com/dmckirnan/find-me-food#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "bluebird": "^3.5.1",
+    "css-loader": "^0.28.7",
+    "express": "^4.16.2",
+    "graphql": "^0.12.3",
+    "immutable": "^3.8.2",
+    "isomorphic-fetch": "^2.2.1",
+    "material-ui": "^0.20.0",
+    "moment": "^2.20.0",
+    "node-sass": "^4.7.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.3",
+    "chai": "^4.1.2",
+    "concurrently": "^3.5.1",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "jsdom": "^11.5.1",
+    "mocha": "^4.0.1",
+    "react-test-renderer": "^16.2.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}
