@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import configureStore from './store/configureStore';
-import App from './components/App.jsx';
+import App from './App.jsx';
 
 const store = configureStore();
 /* eslint-disable react/jsx-filename-extension */
