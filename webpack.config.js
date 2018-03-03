@@ -39,10 +39,8 @@ const config = {
     open: true,
   },
   resolve: {
-    root: [
-      path.resolve('./src'),
-    ],
     extensions: ['.js', '.jsx'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
   },
 };
 
