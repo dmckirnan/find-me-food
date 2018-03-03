@@ -40,7 +40,7 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    modules: [path.resolve(__dirname, './src'), 'node_modules'],
+    modules: [path.resolve(__dirname, './src/components/'), 'node_modules'],
     alias: {
       components: path.resolve(__dirname, './src/components'),
     }
