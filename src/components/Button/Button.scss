@@ -13,7 +13,7 @@ $white-btn-text: #fff;
   outline: none;
   cursor: pointer;
 
-  &:hover, &:focus, &:active {
+  &:hover, &:active {
     color: $btn-color;
     background-color: $white-btn-text;
   }
