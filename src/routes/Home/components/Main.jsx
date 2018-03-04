@@ -7,7 +7,11 @@ const Main = () =>
   (
     <div>
       <Home />
-      <Button onClick={() => console.log('hi')} text={'fuck'} />
+      <Button
+        onClick={() => console.log('hi')}
+        text="Test"
+        reactKey="test-button"
+      />
     </div>
   );
 

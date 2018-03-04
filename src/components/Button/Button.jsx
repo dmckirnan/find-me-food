@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import styles from './Button.scss';
-import './Button.scss';
+import styles from './Button.scss';
 
 const Button = (props) => {
   const {
-    text, onClick, style, className
+    text, onClick, style, className, reactKey
   } = props;
 
   return (
     <button
-      className={className || 'reusable-button'}
+      className={className || styles.reusableButton}
       onClick={onClick}
       style={style || null}
+      key={reactKey}
     >
       {text}
     </button>
@@ -27,6 +27,10 @@ Button.propTypes = {
     PropTypes.number,
   ])),
   className: PropTypes.string,
+  reactKey: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
 };
 
 Button.defaultProps = {

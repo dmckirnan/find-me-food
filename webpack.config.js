@@ -1,5 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const nodeEnv = process.env.NODE_ENV || 'development';
+const isProduction = nodeEnv === 'production';
+const buildPath = path.join(__dirname, './build');
+const sourcePath = path.join(__dirname, './src');
 
 const config = {
   entry: {
@@ -12,27 +19,54 @@ const config = {
   devtool: 'eval-source-map',
   module: {
     loaders: [{
-      test: /\.jsx?/,
-      loader: 'babel-loader',
+      test: /\.(js|jsx)$/,
       exclude: /node_modules/,
+      use: [
+        'babel-loader',
+      ],
     },
     {
-      test: /\.js$/,
-      loader: 'babel-loader',
+      test: /\.css$/,
       exclude: /node_modules/,
-    },
-    {
-      test: /\.module\.css$/,
-      use: ['style-loader', {
-        loader: 'css-loader',
-        options: {
-          modules: true,
-        }
-      }]
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader?camelCase&modules&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
+        // Could also be written:
+        // use: [
+        //   {
+        //     loader: 'css-loader',
+        //     query: {
+        //       modules: true,
+        //       CamelCase doesn't work in this format
+        //       camelCase: true,
+        //       localIdentName: '[name]__[local]___[hash:base64:5]'
+        //     }
+        //   },
+        //   'postcss-loader'
+        // ]
+      }),
     },
     {
       test: /\.scss$/,
-      loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader?camelCase&modules&importLoader=2&sourceMap&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'
+        // Could also be written:
+        // use: [
+        //   {
+        //     loader: 'css-loader',
+        //     query: {
+        //       modules: true,
+        //       sourceMap: true,
+        //       importLoaders: 2,
+        //       CamelCase doesn't work in this format
+        //       camelCase: true,
+        //       localIdentName: '[name]__[local]___[hash:base64:5]'
+        //     }
+        //   },
+        //   'sass-loader'
+        // ]
+      }),
     },
     {
       test: /\.(png|jpg|)$/,
@@ -54,6 +88,13 @@ const config = {
       components: path.resolve(__dirname, './src/components'),
     }
   },
+  plugins: [
+    new ExtractTextPlugin('style.css'),
+    new HtmlWebpackPlugin({
+      template: path.join(buildPath, 'index.html'),
+      inject: true,
+    }),
+  ]
 };
 
 module.exports = config;
