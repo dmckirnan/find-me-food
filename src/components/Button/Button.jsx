@@ -1,31 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import './Button.scss';
 
-export default class Button extends Component {
-  static propTypes = {
-    text: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-  };
+const Button = (props) => {
+  const {
+    text, onClick, style, className
+  } = props;
 
-  constructor(props) {
-    super(props);
-    this.state = {
+  return (
+    <button
+      className={className || 'reusable-button'}
+      onClick={onClick}
+      style={style || null}
+    >
+      {text}
+    </button>
+  );
+};
 
-    };
-  }
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  style: PropTypes.object,
+};
 
-  render() {
-    const { text, onClick } = this.props;
+Button.defaultProps = {
+  className: null,
+  style: null,
+};
 
-    return (
-      <button
-        onClick={onClick}
-        style={{
-          width: '100px', border: '1px solid blue', borderRadius: '60px', fontSize: '12px', height: '32px'
-        }}
-      >
-        {text}
-      </button>
-    );
-  }
-}
+
+export default Button;

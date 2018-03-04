@@ -1,0 +1,20 @@
+$btn-color: #20a2ec;
+$white-btn-text: #fff;
+
+.reusable-button {
+  height: 32px;
+  width: 100px;
+  color: $white-btn-text;
+  background-color: $btn-color;
+  border: 1px solid $btn-color;
+  border-radius: 60px;
+  font-size: 12px;
+  transition: 0.5s all ease-in-out;
+  outline: none;
+  cursor: pointer;
+
+  &:hover, &:focus, &:active {
+    color: $btn-color;
+    background-color: $white-btn-text;
+  }
+}
