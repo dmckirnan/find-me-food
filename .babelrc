@@ -9,5 +9,13 @@
     "test": {
       "presets": ["es2015", "react"]
     }
-  }
+  },
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "components": "./src/components"
+      }
+    }]
+  ]
 }
