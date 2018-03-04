@@ -22,6 +22,15 @@ const config = {
       exclude: /node_modules/,
     },
     {
+      test: /\.module\.css$/,
+      use: ['style-loader', {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+        }
+      }]
+    },
+    {
       test: /\.scss$/,
       loaders: ['style-loader', 'css-loader', 'sass-loader'],
     },
