@@ -8,7 +8,7 @@ const Main = () =>
     <div>
       <Home />
       <Button
-        onClick={() => console.log('hi')}
+        onClick={() => 'hi'}
         text="Test"
         reactKey="test-button"
       />
