@@ -9,7 +9,7 @@
     "setup": "concurrently --kill-others \"npm run build\" \"npm run server\"",
     "server": "nodemon server/server.js",
     "build": "webpack -p --watch",
-    "test": "mocha --compilers js:babel-core/register --require ignore-styles",
+    "test": "mocha --compilers js:babel-core/register --require ./test/config.js --require ignore-styles \"src/**/*.spec.js\"",
     "tdd": "npm test -- --watch",
     "postinstall": "webpack -p"
   },

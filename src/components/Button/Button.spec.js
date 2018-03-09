@@ -2,15 +2,15 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import App from '../src/App.jsx';
+import Button from './Button.jsx';
 
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/extensions */
 /* eslint-disable no-undef */
 
-describe('<App />', () => {
-  it('should be a div element', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.type()).to.eql('div');
+describe('<Button />', () => {
+  it('should be a button element', () => {
+    const wrapper = shallow(<Button />);
+    expect(wrapper.type()).to.eql('button');
   });
 });
