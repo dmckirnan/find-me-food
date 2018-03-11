@@ -4,16 +4,15 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import configureStore from './store/configureStore';
-import App from './App.jsx';
+import AppContainer from './containers/AppContainer.js';
 
 const store = configureStore();
-/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable no-undef */
 render(
   <Provider store={store}>
     <BrowserRouter>
       <div>
-        <App />
+        <AppContainer />
       </div>
     </BrowserRouter>
   </Provider>,

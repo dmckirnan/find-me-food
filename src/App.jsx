@@ -4,13 +4,23 @@ import PropTypes from 'prop-types';
 import { Navbar, Main } from './routes/Home';
 import { Login } from './routes/Auth';
 
-const App = () =>
-  (
+const App = ({
+  authorized, active, toggleActive, toggleAuthorized
+}) => {
+  return (
     <div>
-      <Login />
-      <Navbar />
-      <Main />
+      <Navbar active={active} toggle={toggleActive} />
+      {authorized && <Main />}
+      {!authorized && <div><Login authorized={authorized} toggleAuthorized={toggleAuthorized} /></div>}
     </div>
   );
+};
+
+App.propTypes = {
+  authorized: PropTypes.bool.isRequired,
+  active: PropTypes.bool.isRequired,
+  toggleActive: PropTypes.func.isRequired,
+  toggleAuthorized: PropTypes.func.isRequired,
+};
 
 export default App;
