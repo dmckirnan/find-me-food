@@ -11,11 +11,9 @@ const mapActionCreators = {
   toggleActive,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    authorized: state.app.authorized,
-    active: state.app.active,
-  };
-};
+const mapStateToProps = (state) => ({
+  authorized: state.app.toJS().authorized,
+  active: state.app.toJS().active,
+});
 
 export default connect(mapStateToProps, mapActionCreators)(App);
