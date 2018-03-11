@@ -31,19 +31,6 @@ const config = {
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: 'css-loader?camelCase&modules&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
-        // Could also be written:
-        // use: [
-        //   {
-        //     loader: 'css-loader',
-        //     query: {
-        //       modules: true,
-        //       CamelCase doesn't work in this format
-        //       camelCase: true,
-        //       localIdentName: '[name]__[local]___[hash:base64:5]'
-        //     }
-        //   },
-        //   'postcss-loader'
-        // ]
       }),
     },
     {
@@ -51,21 +38,6 @@ const config = {
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: 'css-loader?camelCase&modules&importLoader=2&sourceMap&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'
-        // Could also be written:
-        // use: [
-        //   {
-        //     loader: 'css-loader',
-        //     query: {
-        //       modules: true,
-        //       sourceMap: true,
-        //       importLoaders: 2,
-        //       CamelCase doesn't work in this format
-        //       camelCase: true,
-        //       localIdentName: '[name]__[local]___[hash:base64:5]'
-        //     }
-        //   },
-        //   'sass-loader'
-        // ]
       }),
     },
     {

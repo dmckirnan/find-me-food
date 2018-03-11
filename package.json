@@ -9,7 +9,7 @@
     "setup": "concurrently --kill-others \"npm run build\" \"npm run server\"",
     "server": "nodemon server/server.js",
     "build": "webpack -p --watch",
-    "test": "mocha --compilers js:babel-core/register --require ./test/config.js --require ignore-styles \"src/**/*.spec.js\"",
+    "test": "mocha --compilers js:babel-core/register --require ./test/config.js \"src/**/*.spec.js\"",
     "tdd": "npm test -- --watch",
     "postinstall": "webpack -p"
   },
@@ -34,7 +34,9 @@
     "babel-preset-stage-1": "^6.24.1",
     "babel-register": "^6.26.0",
     "bluebird": "^3.5.1",
+    "classnames": "^2.2.5",
     "css-loader": "^0.28.7",
+    "css-modules-require-hook": "^4.2.3",
     "eslint-import-resolver-webpack": "^0.8.4",
     "express": "^4.16.2",
     "graphql": "^0.12.3",
@@ -45,6 +47,7 @@
     "node-sass": "^4.7.2",
     "nodemon": "^1.17.1",
     "prop-types": "^15.6.0",
+    "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -52,6 +55,7 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
+    "sinon-chai": "^3.0.0",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0"
   },
@@ -76,6 +80,7 @@
     "mocha": "^4.0.1",
     "postcss-loader": "^2.1.1",
     "react-test-renderer": "^16.2.0",
+    "sinon": "^4.4.2",
     "webpack-dev-server": "^2.9.7"
   }
 }
