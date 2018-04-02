@@ -1,3 +1,3 @@
-import Login from './components/Login.jsx';
+import Auth from './components/Auth.jsx';
 
-export { Login };
+export { Auth };
