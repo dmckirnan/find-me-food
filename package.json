@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run setup",
-    "dev": "webpack-dev-server -d --hot --config webpack.config.js --watch",
+    "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run dev-client\"",
+    "dev-server": "nodemon ./server/server.js",
+    "dev-client": "webpack-dev-server -d --hot --config webpack.config.js --watch",
     "setup": "concurrently --kill-others \"npm run build\" \"npm run server\"",
     "server": "nodemon server/server.js",
     "build": "webpack -p --watch",
@@ -45,8 +47,12 @@
     "isomorphic-fetch": "^2.2.1",
     "material-ui": "^0.20.0",
     "moment": "^2.20.0",
+    "mongodb": "^3.0.5",
+    "mongoose": "^5.0.12",
     "node-sass": "^4.7.2",
     "nodemon": "^1.17.1",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
     "pg-promise": "^8.2.2",
     "prop-types": "^15.6.0",
     "ramda": "^0.25.0",
@@ -57,9 +63,12 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
+    "sequelize": "^4.37.4",
+    "sequelize-cli": "^4.0.0",
     "sinon-chai": "^3.0.0",
     "style-loader": "^0.19.1",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "yelp": "^1.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",

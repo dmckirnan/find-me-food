@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "darrick",
+    "password": "noreturn1",
+    "database": "findmefood",
+    "host": "127.0.0.1",
+    "port": 5555,
+    "dialect": "postgres"
+  },
+  "testing": {
+    "username": "darrick",
+    "password": "noreturn1",
+    "database": "findmefood",
+    "host": "127.0.0.1",
+    "port": 5555,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "darrick",
+    "password": "noreturn1",
+    "database": "findmefood",
+    "host": "127.0.0.1",
+    "port": 5555,
+    "dialect": "postgres"
+  }
+}

@@ -1,4 +1,5 @@
 import Immutable from 'immutable';
+import axios from 'axios';
 
 export const TOGGLE_AUTHORIZED = 'TOGGLE_AUTHORIZED';
 export const TOGGLE_ACTIVE = 'TOGGLE_ACTIVE';
@@ -7,16 +8,6 @@ const defaultState = Immutable.fromJS({
   authorized: false,
   active: false,
 });
-
-// export function toggleAuthorized(bool) {
-//   return (dispatch, getState) => {
-//     const state = { ...getState().app, authorized: bool };
-//     return dispatch({
-//       type: TOGGLE_AUTHORIZED,
-//       payload: state,
-//     });
-//   };
-// }
 
 export function toggleAuthorized(bool) {
   return (dispatch, getState) => {
@@ -27,16 +18,6 @@ export function toggleAuthorized(bool) {
   };
 }
 
-// export function toggleActive(bool) {
-//   return (dispatch, getState) => {
-//     const state = { ...getState().app, active: bool };
-//     return dispatch({
-//       type: TOGGLE_ACTIVE,
-//       payload: state,
-//     });
-//   };
-// }
-
 export function toggleActive(bool) {
   return (dispatch, getState) => {
     return dispatch({
@@ -46,8 +27,21 @@ export function toggleActive(bool) {
   };
 }
 
+export function authenticateUser(username, password) {
+  return (dispatch, getState) => {
+    axios.post('/api/users/verify', { username, password })
+      .then(res => dispatch(toggleAuthorized(true)))
+      .catch(err => {
+        console.log('Authentication failed: ', err);
+        return dispatch(toggleAuthorized(false));
+      });
+  };
+}
+
 export const actions = {
   toggleAuthorized,
+  toggleActive,
+  authenticateUser,
 };
 
 const ACTION_HANDLERS = {

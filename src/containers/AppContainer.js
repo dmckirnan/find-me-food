@@ -4,11 +4,13 @@ import App from '../App.jsx';
 import {
   toggleAuthorized,
   toggleActive,
+  authenticateUser,
 } from '../modules/App';
 
 const mapActionCreators = {
   toggleAuthorized,
   toggleActive,
+  authenticateUser,
 };
 
 const mapStateToProps = (state) => ({

@@ -52,6 +52,13 @@ const config = {
     historyApiFallback: true,
     inline: true,
     open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        pathRewrite: { '^/api': '' },
+        secure: false
+      }
+    }
   },
   resolve: {
     extensions: ['.js', '.jsx'],
