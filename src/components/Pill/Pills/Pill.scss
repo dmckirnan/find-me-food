@@ -1,0 +1,67 @@
+$font-color: #FFFFFF;
+$font-family: 'Proxima Nova';
+$bg-green: #0FBD71;
+$bg-red: #EC4639;
+$bg-silver: #EBEBEB;
+$bg-yellow: #F5B73B;
+$bg-blue: #0CA0EF;
+
+.status-pill, .status-pill-green,
+.status-pill-red, .status-pill-silver,
+.status-pill-yellow, .status-pill-blue,
+ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16px;
+  width: 56px;
+  background-color: $bg-silver;
+  color: $font-color;
+  font-family: $font-family;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 16px;
+  line-height: 10px;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.big-pill, .big-pill-green, .big-pill-red, .big-pill-blue,
+.big-pill-silver, .big-pill-yellow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 128px;
+  border-radius: 16px;
+  background-color: $bg-silver;
+}
+
+.bubble-pill, .bubble-pill-green, .bubble-pill-red, .bubble-pill-blue,
+.bubble-pill-silver, .bubble-pill-yellow {
+  height: 8px;
+  width: 8px;
+  border-radius: 16px;
+  background-color: $bg-silver;
+}
+
+
+.status-pill-green, .big-pill-green, .bubble-pill-green {
+  background-color: $bg-green;
+}
+
+.status-pill-red, .big-pill-red, .bubble-pill-red {
+  background-color: $bg-red;
+}
+
+.status-pill-blue, .big-pill-blue, .bubble-pill-blue {
+  background-color: $bg-blue;
+}
+
+.status-pill-yellow, .big-pill-yellow, .bubble-pill-yellow {
+  background-color: $bg-yellow;
+}
+
+.status-pill-silver, .big-pill-silver, .bubble-pill-silver {
+  background-color: $bg-silver;
+}
