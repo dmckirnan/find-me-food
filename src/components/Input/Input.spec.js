@@ -9,7 +9,7 @@ const props = {
   onChange: () => {},
   hasErorr: null,
   error: null,
-  disabled: null,
+  disabled: false,
   className: null,
   divClass: null,
   value: null,
@@ -61,23 +61,23 @@ describe('<Input />', () => {
     wrapper = mount(<Input { ...newProps} />);
     expect(wrapper.find(`.${styles.errorText}`)).to.have.length(0);
   });
-  // it('should render an input label if label is true', () => {
-  //   const newProps = { ...props, label: 'test' };
-  //   wrapper = mount(<Input { ...newProps} />);
-  //   expect(wrapper.find(`.${styles.inputLabel}`)).to.have.length(1);
-  //   expect(wrapper.find(`.${styles.labelDisabled}`)).to.have.length(0);
-  // });
-  // it('should render a disabled label if disabled is true and label true', () => {
-  //   const newProps = { ...props, disabled: true, label: 'test' };
-  //   wrapper = mount(<Input { ...newProps} />);
-  //   expect(wrapper.find(`.${styles.inputLabel}`)).to.have.length(0);
-  //   expect(wrapper.find(`.${styles.labelDisabled}`)).to.have.length(1);
-  // });
+  it('should render an input label if label is true', () => {
+    const newProps = { ...props, label: 'test' };
+    wrapper = mount(<Input { ...newProps} />);
+    expect(wrapper.find('p').hasClass(`${styles.inputLabel}`));
+    expect(wrapper.find('p').hasClass(`${styles.labelDisabled}`)).to.equal(false);
+  });
+  it('should render a disabled label if disabled is true and label true', () => {
+    const newProps = { ...props, disabled: true, label: 'test' };
+    wrapper = mount(<Input { ...newProps} />);
+    expect(wrapper.find('p').hasClass(`${styles.inputLabel}`)).to.equal(false);
+    expect(wrapper.find('p').hasClass(`${styles.labelDisabled}`));
+  });
   it('should have the given className provided in props', () => {
     const newProps = { ...props, className: 'test-name' };
     wrapper = mount(<Input { ...newProps} />);
     expect(wrapper.props().className).to.equal('test-name');
-    // expect(wrapper.find('.test-name')).to.have.length(1);
+    expect(wrapper.find('input').hasClass('test-name'));
   });
   it('should have given divClass provided in props', () => {
     const newProps = { ...props, divClass: 'test-name' };

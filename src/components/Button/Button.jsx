@@ -79,7 +79,7 @@ export default class Button extends Component {
 
     const classTypeIsntDisabled = (className && type && !disabled);
     const typeIsValid = (type && colorCache[type] && type !== 'BLUE');
-    const animation = { [styles['animate']]: this.state.clicked };
+    const animation = { [styles.animate]: this.state.clicked };
 
     if (disabled) return classNames(styles.reusableDisabledButton, className);
     if (classTypeIsntDisabled) return classNames(styles.reusableButton, colorCache[type], className, animation);

@@ -1,0 +1,28 @@
+$light-gray: #A1A1A1;
+$dark-grey: rgb(80, 80, 80);
+$button-bg: #FFFFFF;
+
+.search {
+  position: relative;
+  left: -2px;
+}
+
+#fa-search {
+  position: absolute;
+  z-index: 1;
+  top: 9px;
+  left: 10px;
+  color: $light-gray;
+}
+
+.search-field {
+  position: relative;
+  height: 32px;
+  width: 350px;
+  border: 1px solid $light-gray;
+  border-radius: 60px;
+  background-color: $button-bg;
+  outline: 0;
+  color: $dark-grey;
+  text-indent: 32px;
+}

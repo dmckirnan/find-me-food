@@ -13,7 +13,13 @@ const Navbar = ({ toggle, active }) =>
         </div>
         <nav>
           <div className={styles.navMobile}>
-            <a id={styles.navToggle} onClick={toggle} className={active ? styles.active : ''} href="#"><span /></a>
+            <a
+              id={styles.navToggle}
+              onClick={toggle}
+              className={active ? styles.active : ''}
+              href="#"
+            > <span />
+            </a>
           </div>
           <ul id={active ? styles.displayList : ''} className={styles.navList}>
             <li><Link to="/">Home</Link></li>
