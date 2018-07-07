@@ -4,7 +4,7 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import enzyme, { configure } from 'enzyme';
 import sass from 'node-sass';
-import hook from 'css-modules-require-hook';
+// import hook from 'css-modules-require-hook';
 
 const jsdom = require('jsdom');
 
