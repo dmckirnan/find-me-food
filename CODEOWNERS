@@ -5,4 +5,4 @@
 /test/ @dmckirnan
 
 # Components
-/src/components/ @dmckirnan
+src/components/ @dmckirnan
