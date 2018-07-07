@@ -1,5 +1,5 @@
 # ESLint
-/.eslintrc @dmckirnan
+.eslintrc @dmckirnan
 
 # Test
 /test/* @dmckirnan
