@@ -1,8 +1,0 @@
-# ESLint
-.eslintrc @dmckirnan
-
-# Test
-/test/* @dmckirnan
-
-# Components
-/src/components/* @dmckirnan
