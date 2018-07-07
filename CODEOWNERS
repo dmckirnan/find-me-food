@@ -1,8 +1,8 @@
 # ESLint
-.eslintrc @dmckirnan
+/.eslintrc @dmckirnan
 
 # Test
 /test/ @dmckirnan
 
 # Components
-/src/components/* @dmckirnan
+/src/components/ @dmckirnan
