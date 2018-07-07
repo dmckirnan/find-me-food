@@ -6,6 +6,7 @@ import styles from './Pill.scss';
 import { bigCache } from './utils';
 
 const BigPill = ({ color, className }) => {
+  //
   return (
     <div className={classNames(styles.bigPill, bigCache[color], className)} />
   );
