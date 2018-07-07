@@ -2,7 +2,7 @@
 .eslintrc @dmckirnan
 
 # Test
-/test/* @dmckirnan
+/test/ @dmckirnan
 
 # Components
 /src/components/* @dmckirnan
